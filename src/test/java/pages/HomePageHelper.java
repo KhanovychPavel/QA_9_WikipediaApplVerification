@@ -16,18 +16,6 @@ public class HomePageHelper extends PageBase {
     @FindBy(id = "org.wikipedia:id/page_list_item_description")
     WebElement firstLinkDescription;
 
-
-
-
-//    @FindBy(xpath = "//*[@resource-id='org.wikipedia:id/icon'][1])")
-//    WebElement myListsWidjet;
-//    @FindBy(xpath = "//*[@resource-id='org.wikipedia:id/menu_sort_options']")
-//    WebElement textViewSortButton;
-//    @FindBy(xpath = "//*[@resource-id='org.wikipedia:id/item_title']")
-//    WebElement listTitle;
-
-
-
     public HomePageHelper(WebDriver driver) {
         this.driver = driver;
     }
@@ -47,19 +35,6 @@ public class HomePageHelper extends PageBase {
         waitUntilElementIsClickable(firstLink, 10);
     }
 
-//    public void openMyListsCollection() {
-//        myListsWidjet.click();
-//    }
-//
-//    public void waitUntilMyListsPageIsLoaded() {
-//        waitUntilElementIsClickable (textViewSortButton, 3000);
-//    }
-//
-//    public String getListTitle() {
-//        return listTitle.getText();
-//    }
-
-
     public String getFirstLinkTitle() {
         return firstLinkTitle.getText();
     }
@@ -71,6 +46,7 @@ public class HomePageHelper extends PageBase {
     public void openFirstLink() {
         firstLink.click();
     }
+
 }
 
 
@@ -148,7 +124,7 @@ public class HomePageHelper extends PageBase {
 
 //    @FindBy(xpath = "//*[@resource-id='org.wikipedia:id/page_list_item_container']")
 //    WebElement firstPageListItem;
-//    @FindBy(xpath = "//*[@resource-id='org.wikipedia:id/page_toolbar]//*[@class='android.widget.ImageView']")
+//    @FindBy(xpath = "//*[@resource-id='org.wikipedia:id/page_toolbar']//*[@class='android.widget.ImageView']")
 //    WebElement moreOptionsButton;
 //    @FindBy(xpath = "//*[@resource-id='org.wikipedia:id/title']")
 //    WebElement addToReadingList;
