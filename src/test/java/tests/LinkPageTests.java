@@ -7,11 +7,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LinkPageHelper;
 
-
 public class LinkPageTests extends TestBase {
     LinkPageHelper linkPage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initTests() {
         linkPage = PageFactory.initElements(driver, LinkPageHelper.class);
 
@@ -29,13 +28,11 @@ public class LinkPageTests extends TestBase {
         linkPage.fillNameListField("My first list");
         linkPage.returnToHomePage();
         homePage.waitUntilPageIsLoaded();
-        linkPage.enterMyLinksList();
+        linkPage.enterMyListsPage();
         Assert.assertEquals("My first list", linkPage.nameOfCreatingList());
     }
 
-
-
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }

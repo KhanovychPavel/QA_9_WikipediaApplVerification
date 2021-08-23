@@ -1,11 +1,7 @@
 package tests;
 
-
-
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
@@ -21,7 +17,7 @@ public class TestBase {
 
     HomePageHelper homePage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void startUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
@@ -39,7 +35,7 @@ public class TestBase {
         homePage.waitUntilPageIsLoaded();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }

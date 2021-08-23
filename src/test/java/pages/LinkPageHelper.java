@@ -1,11 +1,8 @@
 package pages;
 
-import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 
 public class LinkPageHelper extends PageBase {
     @FindBy(id = "org.wikipedia:id/view_page_title_text")
@@ -64,11 +61,7 @@ public class LinkPageHelper extends PageBase {
         waitUntilPageIsLoaded();
     }
 
-    public void returnToHomePage() {
-        driver.navigate().back();
-    }
-
-    public void enterMyLinksList() {
+    public void enterMyListsPage() {
         enterMyListWidget.click();
         waitUntilElementIsVisible(menuSortOptionsButton, 5);
     }
